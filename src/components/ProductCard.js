@@ -1,64 +1,31 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+
+const URL = 'http://localhost/store/';
 
 function ProductCard() {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        axios.get(URL)
+          .then((response) => {
+            setItems(response.data)
+          }).catch(error => {
+            alert(error.response ? error.response.data.error : error)
+          });
+      }, [])
   return (
-<>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-    <div className='ProductCard'>
-        <img src="https://taitonetti.fi/image/cache/catalog/tuotteet/naytot/AOC-24G2SAE-300x300.jpg" alt="" />
-        <p className='Price'>300€</p>
-        <p className='Description'>AOC Pelinäyttö</p>
-    </div>
-  </>
+        <>
+        {items?.map(item => (
+            <div className='ProductCard' key={item.id}>
+                <img src={require("../images/"+item.image+".jpg")} alt="" />
+                    <p className='Name'>{item.name}</p>
+                    <p className='Price'>{item.price}</p>
+            </div>
+        ))}
+    </>
   )
 }
 
