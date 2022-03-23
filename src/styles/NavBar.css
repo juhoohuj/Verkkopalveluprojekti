@@ -2,3 +2,8 @@
     font-size: 1.2rem;
     color: #161615 !important;
 }
+
+/* .collapse:not(.show) {
+    display: flex!important;
+    flex-basis: auto;
+} */

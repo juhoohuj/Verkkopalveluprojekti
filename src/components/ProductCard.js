@@ -6,16 +6,23 @@ import { useEffect, useState } from 'react';
 const URL = 'http://localhost/store/';
 
 function ProductCard() {
+    const [isLoading, setLoading] = useState(true);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
         axios.get(URL)
           .then((response) => {
             setItems(response.data)
+            setLoading(false);
           }).catch(error => {
             alert(error.response ? error.response.data.error : error)
           });
       }, [])
+
+      if (isLoading) {
+        return <div className="App">Loading...</div>;
+      }
+
   return (
         <>
         {items?.map(item => (

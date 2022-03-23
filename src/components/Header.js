@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
+import logo from "../images/kauppax.png";
 
 function Header() {
   return (
     <>
         <header>
-          <h1>Kauppa X</h1>
-          <a className='Login' href="#">Kirjaudu sisään</a>
-          <a href="#">Rekisteröidy</a>
+          <img src={logo} alt="" />
+            <a className='Login' href="#">Kirjaudu sisään</a>
+            <a href="#">Rekisteröidy</a>
         </header>
     </>
   )

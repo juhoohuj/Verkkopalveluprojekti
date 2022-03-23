@@ -1,7 +1,7 @@
 import React from 'react'
 import kuva from "../images/carousel-image.jpg";
-import kuva3 from "../images/carousel-image2.jpg";
-import kuva4 from "../images/carousel-image3.jpg";
+import kuva2 from "../images/carousel-image2.jpg";
+import kuva3 from "../images/carousel-image3.jpg";
 
 
 function Carousel() {
@@ -16,21 +16,21 @@ function Carousel() {
   <div className="carousel-inner" >
     <div className="carousel-item active">
       <img src={kuva} className="d-block" alt="..."></img>
-      <div className="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-md-block">
         <h5>Läppärit pelikäyttöön</h5>
         <p>Opiskelevalle pelaajalle sopivat koneet.</p>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={kuva4} className="d-block" alt="..."></img>
-      <div className="carousel-caption d-none d-md-block">
+      <img src={kuva2} className="d-block" alt="..."></img>
+      <div className="carousel-caption d-md-block">
         <h5>Pelitietokoneet</h5>
         <p>Raskaaseen pelaamiseen.</p>
       </div>
     </div>
     <div className="carousel-item">
       <img src={kuva3} className="d-block" alt="..."></img>
-      <div className="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-md-block">
         <h5>Läppärit opiskeluun</h5>
         <p>Laaja valikoima läppäreitä opiskeluun.</p>
       </div>
