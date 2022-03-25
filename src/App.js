@@ -1,0 +1,81 @@
+import './styles/App.css';
+import './styles/Header.css';
+import './styles/NavBar.css';
+import './styles/ProductCard.css';
+import './styles/ProductGrid.css';
+import './styles/Carousel.css';
+
+import NavBar from './components/NavBar';
+import Header from './components/Header';
+import ProductGrid from './components/ProductGrid';
+import Carousel from './components/Carousel';
+import { useState, useEffect } from 'react';
+import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
+
+import Products from "./pages/Products";
+import NotFound from './pages/NotFound';
+import Search from './pages/Search';
+import Order from './pages/Order';
+import Home from './pages/Home';
+import { prettyDOM } from '@testing-library/react';
+
+const URL = 'http://localhost/store/';
+
+function App() {
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    if ('cart' in localStorage) {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+  
+ 
+  }, [])
+  
+  function addToCart(product){
+    if(cart.some(item => item.id === product.id)){
+      const existingProduct = cart.filter(item => item.id === product.id);
+      updateAmount(parseInt(existingProduct[0].amount) +1, product);
+    }
+    else{
+      product['amount'] = 1;
+      const newCart = [...cart,product];
+      setCart(newCart);
+      localStorage.setItem('cart',JSON.stringify(newCart));
+    }
+  }
+
+  function removeFromCart(product) {
+    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWithoutRemoved);
+    localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+  }
+
+  function updateAmount(amount, product){
+    product.amount = amount;
+    const index = cart.findIndex((item => item.id === product.id));
+    const modifiedCart = Object.assign([...cart],{[index]: product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart'.JSON.stringify(modifiedCart)); 
+  }
+
+  return (
+    <>
+      <Header />
+      <Router>
+      <NavBar URL={URL}/>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/products/:categoryId" element={<Products URL={URL} addToCart={addToCart}/>}/>
+          <Route path="order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>} />
+          <Route path="products" element={<Products />}/>
+          <Route path="search" element={<Search />}/>
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+      </Router>
+   
+    </>
+  );
+}
+
+export default App;

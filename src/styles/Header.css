@@ -1,0 +1,34 @@
+header{
+    background-image: url(../images/circuit-board-g48d8ac1ca_1920.jpg);
+    min-height: 400px;
+    color: #fefefe;
+    /* margin-bottom: 10px; */
+    text-align: center;
+  }
+  
+  header > h1 {
+    font-size: 4rem;
+    margin: 0 0 20px 0;
+    padding-top: 150px;
+    
+  }
+  header > img{
+    display: block;
+    margin: auto;
+    padding-top: 100px; 
+  }
+  header > a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fefefe;
+    background-color: #b34026;
+    margin-left: 10px;
+    padding: 4px 4px 4px 4px;
+    
+  }
+  
+  .Login{
+    color: #292929;
+    background-color: #59e46c;
+  }

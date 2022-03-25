@@ -1,0 +1,12 @@
+.ProductGrid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-self: center;
+    margin: auto;
+    margin-top: 60px;
+    gap: 10px;
+  }
+
+  

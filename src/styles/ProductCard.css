@@ -1,0 +1,14 @@
+.ProductCard{
+    background-color: rgb(216, 216, 216);
+    border: 1px solid gray;
+    box-shadow: 0px 0px 10px 0px #000000;
+    max-height: 300px;
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  .ProductCard > img {
+    max-width:100%;
+    max-height:100%;
+  }
+
