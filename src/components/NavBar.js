@@ -25,6 +25,7 @@ function NavBar() {
               <div className="navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                   <Link className="nav-link" to={'/'} >Etusivu</Link>
+                  <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
 
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
