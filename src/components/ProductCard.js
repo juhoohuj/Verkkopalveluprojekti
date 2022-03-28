@@ -24,7 +24,8 @@ function ProductCard() {
       }
 
   return (
-        <>
+    <div className='container'>
+    <div className='ProductGrid'>
         {items?.map(item => (
             <div className='ProductCard' key={item.id}>
                 <img src={require("../images/"+item.image+".jpg")} alt="" />
@@ -32,7 +33,8 @@ function ProductCard() {
                     <p className='Price'>{item.price}</p>
             </div>
         ))}
-    </>
+          </div>
+    </div>
   )
 }
 

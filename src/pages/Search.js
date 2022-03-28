@@ -1,31 +1,34 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
-
+import Header from '../components/Header';
 
 import '../styles/Products.css';
 
-export default function Products({URL ,addToCart}) {
-const [categoryName, setCategoryName] = useState('');
+export default function Search({URL , addToCart}) {
 const [products, setProducts] = useState([]);
-
 
 let params = useParams();
 
 useEffect(() => {
-  axios.get(URL + 'getproducts.php/' + params.categoryId)
+  axios.get(URL + 'searchproducts.php/' + params.keywords)
     .then((response) => {
       const json = response.data;
-      setCategoryName(json.category);
       setProducts (json.products);
     }).catch(error => {
     alert(error.response === undefined ? error : error.response. data.error);
     })
     }, [params])
+
+    
+    if (products.length <=0) {
+      return <h1>Hakusanalla ei löydetty tuotteita</h1>;
+    }
+
   return (
     <div className='Products'>
         <div className='container'>
-          <h1 className='categoryName'>{categoryName}</h1>
+          <h1 className='categoryName'>Haun tulokset: </h1>
             <div className='ProductGrid'>
               {products.map(product => (
                   <div className='ProductCard' key={product.id}>

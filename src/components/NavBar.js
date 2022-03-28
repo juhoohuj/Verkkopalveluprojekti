@@ -3,10 +3,13 @@ import axios from 'axios';
 import {useState, useEffect} from 'react';
 import { Link, Router, Route } from 'react-router-dom';
 
+import Cart from './Cart';
+
 const URL = 'http://localhost/store/';
 
-function NavBar() {
+function NavBar({URL ,cart}) {
     const [categories, setCategories] = useState([]);
+    const [keyword, setKeyword] = useState("");
 
     useEffect(() => {
         axios.get(URL+"getcategories.php")
@@ -26,7 +29,6 @@ function NavBar() {
                 <ul className="navbar-nav">
                   <Link className="nav-link" to={'/'} >Etusivu</Link>
                   <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
-
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Kategoriat
@@ -36,17 +38,25 @@ function NavBar() {
                       <li key={category.id}>
                       <Link 
                         className='dropdown-item'
-                        to={'/Products/' +category.id}>{category.name}
-                          </Link>
+                          to={'/Products/' +category.id}>{category.name}
+                        </Link>
                         </li>
                       ))}
                     </ul>
                   </li>
                 </ul>
-              </div>
             </div>
+            </div>
+              <input className="form-control mr-sm-2" name='keyword' type="search" 
+                placeholder="Etsi tuotetta" aria-label="Search" onChange={e => setKeyword(e.target.value)}/>
+                <Link 
+                  className='btn btn-outline-success'
+                    to={'/search/' +keyword}>Hae
+                </Link>
+                <Cart cart={cart}/>
           </nav>
-          </div>
+        </div>
+          
   )
 }
 export default NavBar;

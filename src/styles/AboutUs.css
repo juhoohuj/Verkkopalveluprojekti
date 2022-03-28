@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-    background-color: #1a1a1a;
+    /* background-color: #1a1a1a; */
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: larger;
+    /* color: white;
+    font-size: larger; */
 }
 
 .col-sm {
