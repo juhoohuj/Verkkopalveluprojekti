@@ -32,7 +32,7 @@ useEffect(() => {
     <Header />
       <NavBar />
         <div className='container'>
-          <h1 className='categorName'>{categoryName}</h1>
+          <h1 className='categoryName'>{categoryName}</h1>
             <div className='ProductGrid'>
               {products.map(product => (
                   <div className='ProductCard' key={product.id}>
