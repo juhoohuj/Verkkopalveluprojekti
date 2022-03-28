@@ -10,12 +10,14 @@ import {
 } from "react-router-dom";
 import Products from "./pages/Products";
 import NotFound from './pages/NotFound';
+import AboutUs from './pages/AboutUs';
 
 
 
 ReactDOM.render(
   <BrowserRouter>
   <Routes>
+    <Route path="/AboutUs" element={<AboutUs/>} />
       <Route path="*" element={<NotFound />} />
         <Route path="/" element={<App />} />
         <Route path="products" element={<Products />} />

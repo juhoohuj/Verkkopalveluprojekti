@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: #1a1a1a;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: larger;
+}
+
+.col-sm {
+
+
+    margin-top: 75px;
+    background-color: #0099cc;
+    padding-top: 10px;
+    padding-left: 50px;
+
+}
+
+.maksutapa{
+    max-width: 200px;
+}
