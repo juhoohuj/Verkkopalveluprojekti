@@ -16,6 +16,7 @@ header{
     display: block;
     margin: auto;
     padding-top: 100px; 
+    width: 760px;
   }
   header > a{
     text-decoration: none;
