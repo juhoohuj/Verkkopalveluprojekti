@@ -16,7 +16,9 @@ import Search from './pages/Search';
 import Order from './pages/Order';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import ProductPage from './pages/ProductPage';
 import { prettyDOM } from '@testing-library/react';
+import Grid from './pages/ProductPage'
 
 const URL = 'http://localhost/store/';
 
@@ -67,6 +69,7 @@ function App() {
           <Route path="/" element={<Home addToCart={addToCart}/>}/>
           <Route path="/AboutUs" element={<AboutUs />}/>
           <Route path="/products/:categoryId" element={<Products URL={URL} addToCart={addToCart}/>}/>
+          <Route path="/ProductPage" element={<ProductPage />}/>
           <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>} />
           <Route path="/products" element={<Products URL={URL}/>}/>
           <Route path="/search/:keywords" element={<Search URL={URL} addToCart={addToCart} />}/>
