@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from "../images/kauppax.png";
+import { Link, Router, Route } from 'react-router-dom';
 
 function Header() {
   return (
     <>
         <header>
           <img src={logo} alt="" />
-            <a className='Login' href="#">Kirjaudu sisään</a>
-            <a href="#">Rekisteröidy</a>
+            <Link className="Login" to={'/LogIn'} >Kirjaudu sisään</Link>
+            <Link className="" to={'/Register'} >Rekisteröidy</Link>
         </header>
     </>
   )

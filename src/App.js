@@ -18,7 +18,9 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ProductPage from './pages/ProductPage';
 import { prettyDOM } from '@testing-library/react';
-import Grid from './pages/ProductPage'
+import Grid from './pages/ProductPage';
+import Register from './pages/Register';
+import LogIn from './pages/LogIn'
 
 const URL = 'http://localhost/store/';
 
@@ -62,14 +64,16 @@ function App() {
 
   return (
     <>
-      <Header />
       <Router>
+      <Header />
       <NavBar URL={URL}/>
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart}/>}/>
           <Route path="/AboutUs" element={<AboutUs />}/>
           <Route path="/products/:categoryId" element={<Products URL={URL} addToCart={addToCart}/>}/>
           <Route path="/ProductPage" element={<ProductPage />}/>
+          <Route path="/Register" element={<Register />}/>
+          <Route path="/Login" element={<LogIn />}/>
           <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>} />
           <Route path="/products" element={<Products URL={URL}/>}/>
           <Route path="/search/:keywords" element={<Search URL={URL} addToCart={addToCart} />}/>

@@ -1,0 +1,23 @@
+.RegisterUser {
+  /* background-color: yellowgreen; */
+  text-align: center;
+
+}
+
+.RegisterForm {
+  display: block;
+}
+
+.RegisterForm > input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.RegisterError {
+  list-style-type: none;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+}
