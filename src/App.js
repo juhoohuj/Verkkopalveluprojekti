@@ -21,7 +21,6 @@ import { prettyDOM } from '@testing-library/react';
 import Grid from './pages/ProductPage';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
-import Grid from './pages/ProductPage'
 import AdminPage from './pages/AdminPage';
 
 const URL = 'http://localhost/store/';
@@ -61,7 +60,7 @@ function App() {
     const index = cart.findIndex((item => item.id === product.id));
     const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);
-    localStorage.setItem('cart'.JSON.stringify(modifiedCart)); 
+    localStorage.setItem('cart',JSON.stringify(modifiedCart)); 
   }
 
   return (
