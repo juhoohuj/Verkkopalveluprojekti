@@ -61,7 +61,7 @@ function App() {
     const index = cart.findIndex((item => item.id === product.id));
     const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);
-    localStorage.setItem('cart'.JSON.stringify(modifiedCart)); 
+    localStorage.setItem('cart',JSON.stringify(modifiedCart)); 
   }
 
   return (
