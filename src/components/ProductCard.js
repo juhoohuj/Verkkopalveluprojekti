@@ -28,7 +28,7 @@ function ProductCard() {
     <div className='ProductGrid'>
         {items?.map(item => (
             <div className='ProductCard' key={item.id}>
-                <img src={require("../images/"+item.image+".jpg")} alt="" />
+                <img src={'http://localhost/store/images/'+item.image+".jpg"} alt="" />
                     <p className='Name'>{item.name}</p>
                     <p className='Price'>{item.price}</p>
             </div>

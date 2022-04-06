@@ -9,7 +9,6 @@ export default function Products({URL ,addToCart}) {
 const [categoryName, setCategoryName] = useState('');
 const [products, setProducts] = useState([]);
 
-
 let params = useParams();
 
 useEffect(() => {
@@ -29,7 +28,7 @@ useEffect(() => {
             <div className='ProductGrid'>
               {products.map(product => (
                   <div className='ProductCard' key={product.id}>
-                      <img src={require("../images/"+product.image+".jpg")} alt="" />
+                      <img src={'http://localhost/store/images/'+product.image+".jpg"} alt="" />
                           <p className='Name'>{product.name}</p>
                           <p className='Price'>{product.price}</p>
                           <button type="button" className="btn btn-primary" onClick={e=> addToCart(product)}>
