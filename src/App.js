@@ -55,6 +55,12 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
   }
 
+
+  function emptyCart() {
+    setCart([])
+    localStorage.removeItem('cart');
+  }
+
   function updateAmount(amount, product){
     product.amount = amount;
     const index = cart.findIndex((item => item.id === product.id));
@@ -67,7 +73,7 @@ function App() {
     <>
       <Router>
       <Header />
-      <NavBar URL={URL}/>
+      <NavBar URL={URL} cart={cart}/>
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart}/>}/>
           <Route path="/AboutUs" element={<AboutUs />}/>
@@ -75,7 +81,7 @@ function App() {
           <Route path="/ProductPage" element={<ProductPage />}/>
           <Route path="/Register" element={<Register />}/>
           <Route path="/Login" element={<LogIn />}/>
-          <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>} />
+          <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} emptyCart={emptyCart}/>} />
           <Route path="/products" element={<Products URL={URL}/>}/>
           <Route path="/search/:keywords" element={<Search URL={URL} addToCart={addToCart} />}/>
           <Route path='/AdminPage' element={<AdminPage />} />

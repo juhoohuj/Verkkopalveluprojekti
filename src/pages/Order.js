@@ -1,7 +1,7 @@
 import React, { useEffect, useState, createRef, } from 'react';
 import { v4 as uuid } from 'uuid';
 
-export default function Order({cart, removeFromCart, updateAmount}) {
+export default function Order({cart, removeFromCart, updateAmount, emptyCart}) {
 	const [inputs,_] = useState([]);
 	const [inputIndex, setInputIndex] = useState(-1);
 	
@@ -40,12 +40,12 @@ export default function Order({cart, removeFromCart, updateAmount}) {
 					<td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
 				<td></td>
 			</tr>
-		)
+		)	
 		})}
 		<tr key={uuid () }>
 						<td></td>
 						<td>{sum.toFixed (2)} €</td>
-						<td></td>
+						<td><a href="#" onClick={() => emptyCart()}>Tyhjennä Ostoskori</a></td>
 					</tr>
 				</tbody>
 			</table>

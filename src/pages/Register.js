@@ -57,8 +57,8 @@ function Register() {
           <input type="password" value={password1} onChange={e => setPassword1(e.target.value)} placeholder='Salasana'/>
           <input type="password" value={password2} onChange={e => setPassword2(e.target.value)} placeholder='Vahvista salasana'/>
           <input value={address} onChange={e => setAddress(e.target.value)} placeholder='Osoite'/>
-          <input value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder='Postinro'/>
-          <input value={city} onChange={e => setCity(e.target.value)} placeholder='Postitmp'/>
+          <input value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder='Postinumero'/>
+          <input value={city} onChange={e => setCity(e.target.value)} placeholder='Postitoimipaikka'/>
           <button>Rekisteröidy</button>
         </form>
         <ul className='RegisterError'>

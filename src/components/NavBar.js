@@ -55,6 +55,7 @@ function NavBar({URL ,cart}) {
                     to={'/search/' +keyword}>Hae
                 </Link>
                 <Cart cart={cart}/>
+                <p className='ProductsInCart'>{cart.length}</p>
           </nav>
         </div>
           
