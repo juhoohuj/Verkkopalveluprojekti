@@ -21,7 +21,6 @@ import { prettyDOM } from '@testing-library/react';
 import Grid from './pages/ProductPage';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
-import Grid from './pages/ProductPage'
 import AdminPage from './pages/AdminPage';
 
 const URL = 'http://localhost/store/';
