@@ -1,0 +1,41 @@
+.cart{
+    display: grid;
+    grid-template-columns: 10rem 950px 10rem;
+    grid-template-rows: 5rem 10rem 10rem;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 350px;
+    margin-left: 350px;
+}
+
+.header{
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 35px;
+    height: 50px;
+}
+
+.table{
+    background-color: rgb(255, 255, 255);
+    grid-column: 2;
+    grid-row: 2;
+    border: 1px solid black;
+}
+
+#poista, #tyhjenna{
+    background-color: rgb(209, 68, 68);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#poista:hover, #tyhjenna:hover{
+    background-color: rgb(163, 54, 54);
+}

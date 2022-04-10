@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import '../styles/Cart.css';
+
 function Cart() {
   return (
     <Link to="/order">

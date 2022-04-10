@@ -25,7 +25,7 @@ export default function Order({cart, removeFromCart, updateAmount, emptyCart}) {
 	let sum = 0;
 	
   return (
-	<div>
+	<div className="cart">
 		<h3 className="header">Ostoskori</h3>
 		<table className="table">
 			<tbody>
@@ -37,7 +37,7 @@ export default function Order({cart, removeFromCart, updateAmount, emptyCart}) {
 					<td>{product.price} €</td>
 					<td><input type="number" ref={inputs[index]} value={product.amount} onChange={e => changeAmount(e,product, index)} /></td>
 					<td>Yhteensä: {product.price*product.amount} €</td>
-					<td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
+					<td><a id="poista" href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
 				<td></td>
 			</tr>
 		)	
@@ -45,7 +45,7 @@ export default function Order({cart, removeFromCart, updateAmount, emptyCart}) {
 		<tr key={uuid () }>
 						<td></td>
 						<td>{sum.toFixed (2)} €</td>
-						<td><a href="#" onClick={() => emptyCart()}>Tyhjennä Ostoskori</a></td>
+						<td><a id="tyhjenna" href="#" onClick={() => emptyCart()}>Tyhjennä Ostoskori</a></td>
 					</tr>
 				</tbody>
 			</table>
