@@ -30,54 +30,15 @@ hr{
 
 .paakuva{
     grid-row: 2;
-    grid-column: 2;
+    grid-column: 2/4;
     display: block;
     text-align: center;
     background-image: url("../images/3.jpg");
-    background-size: 500px;
+    background-size: 700px;
     background-repeat: no-repeat;
     background-position: center;
     height: 500px;
     border: 1px solid black;
-}
-
-.sivukuva1{
-    grid-row: 2;
-    grid-column: 3;
-    display: block;
-    text-align: center;
-    background-image: url("../images/3.jpg");
-    background-size: 175px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1px solid black;
-
-}
-
-.sivukuva2{
-    grid-row: 3;
-    grid-column: 3;
-    display: block;
-    text-align: center;
-    background-image: url("../images/3.jpg");
-    background-size: 175px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1px solid black;
-
-}
-
-.sivukuva3{
-    grid-row: 4;
-    grid-column: 3;
-    display: block;
-    text-align: center;
-    background-image: url("../images/3.jpg");
-    background-size: 175px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1px solid black;
-
 }
 
 .hinta{
