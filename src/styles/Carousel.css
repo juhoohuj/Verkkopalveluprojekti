@@ -4,6 +4,7 @@
    */
   .carousel-item img {
       max-height: 400px;
+      max-width: 100%;
       object-fit: cover;
       margin-left: auto;
       margin-right: auto;

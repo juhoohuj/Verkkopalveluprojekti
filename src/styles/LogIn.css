@@ -1,0 +1,14 @@
+.LoginForm {
+  display: block;
+}
+
+.LoginForm > input {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.UserLogin{
+  text-align: center;
+}

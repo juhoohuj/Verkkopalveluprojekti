@@ -6,7 +6,9 @@ function Header() {
   return (
     <>
         <header>
-          <img src={logo} alt="" />
+          <div className='HeaderLogo'>
+            <img src={logo} alt="" />
+          </div>
             <Link className="Login" to={'/LogIn'} >Kirjaudu sisään</Link>
             <Link className="" to={'/Register'} >Rekisteröidy</Link>
         </header>

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import { v4 as uuid } from 'uuid';
-import '../styles/Register.css';
+import '../styles/LogIn.css';
 
 
 const URL = 'http://localhost/store/customer/';
