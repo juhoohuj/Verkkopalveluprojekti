@@ -78,7 +78,7 @@ hr{
     padding: 15px;
 }
 
-button:hover{
+.nappi > button:hover{
     background-color: rgb(58, 153, 58);
 }
 
