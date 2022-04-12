@@ -71,7 +71,7 @@ hr{
     margin-top: -10px;
 }
 
-button{
+.nappi > button{
     background-color: rgb(75, 196, 75);
     color: white;
     border-radius: 10px;
