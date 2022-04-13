@@ -18,7 +18,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import ProductPage from './pages/ProductPage';
 import { prettyDOM } from '@testing-library/react';
-import Grid from './pages/ProductPage';
+import ProductDetails from './pages/ProductPage';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
 import AdminPage from './pages/AdminPage';
@@ -36,7 +36,7 @@ function App() {
  
   }, [])
   
-  function addToCart(product){
+   function addToCart(product){
     if(cart.some(item => item.id === product.id)){
       const existingProduct = cart.filter(item => item.id === product.id);
       updateAmount(parseInt(existingProduct[0].amount) +1, product);

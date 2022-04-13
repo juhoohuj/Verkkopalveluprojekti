@@ -28,8 +28,6 @@ function NavBar({URL ,cart}) {
               <div className="navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                   <Link className="nav-link" to={'/'} >Etusivu</Link>
-                  <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
-                  <Link className="nav-link" to={'ProductPage'} >Tuotesivu TESTI</Link>
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Kategoriat
@@ -41,10 +39,14 @@ function NavBar({URL ,cart}) {
                         className='dropdown-item'
                           to={'/Products/' +category.id}>{category.name}
                         </Link>
+                        
                         </li>
                       ))}
                     </ul>
+                    
                   </li>
+                  <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
+
                 </ul>
             </div>
             </div>
