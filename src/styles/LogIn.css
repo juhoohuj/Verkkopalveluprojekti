@@ -12,3 +12,15 @@
 .UserLogin{
   text-align: center;
 }
+
+.LogInButton{
+  font-size: 1.2em;
+  border: none;
+  color: #292929;
+  background-color: #59e46c;
+  font-weight: bold;
+}
+
+.LogInButton:hover{
+  background-color: #5ffa74;
+}

@@ -25,12 +25,7 @@ function Login() {
     })
     .then((response) => {
       console.log(response)
-      if(response.data.length == 0) {
-        setErrors(['Kirjautuminen onnistui'])
-      }else{
         setErrors(response.data);
-      }
-      // console.log(errors)
     }).catch(error => {
       alert(error.response ? error.response.data.error : error)
     })
@@ -44,7 +39,7 @@ function Login() {
         <form className='LoginForm' onSubmit={SendLoginForm}>
           <input value={email} onChange={e => setEmail(e.target.value)} placeholder='Sähköposti'/>
           <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder='Salasana'/>
-          <button>Kirjaudu</button>
+          <button className='LogInButton'>Kirjaudu</button>
         </form>
         <ul className='RegisterError'>
         {errors?.map(error => (

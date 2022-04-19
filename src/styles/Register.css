@@ -21,3 +21,15 @@
   margin-left: auto;
   padding: 0;
 }
+
+.RegisterButton{
+  font-size: 1.2em;
+  border: none;
+  color: #fefefe;
+  background-color: #b34026;
+  font-weight: bold;
+}
+
+.RegisterButton:hover{
+  background-color: #c9472a;
+}
