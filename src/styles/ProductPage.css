@@ -6,7 +6,7 @@ body {
 
 .containerbox{
     display: grid;
-    grid-template-columns: 10rem 550px 15rem 550px 10rem;
+    grid-template-columns: 1px 550px 15rem 550px;
     grid-template-rows: 60px 10rem 10rem 10rem;
     gap: 10px;
     justify-content: center;
