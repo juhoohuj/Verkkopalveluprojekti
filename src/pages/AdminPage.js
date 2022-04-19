@@ -41,6 +41,7 @@ return (
         <h2>Tilaukset</h2>
         {orders?.map(order => (
             <div className='Order'>
+                <p>Asiakas: {order.firstname} {order.lastname}</p>
                 <p>Tilausnumero: {order.order_id}</p>
                 <p>Asiakasnumero: {order.customer_id}</p>
                 <p>Tilauspäivämäärä: {order.orderdate}</p>
