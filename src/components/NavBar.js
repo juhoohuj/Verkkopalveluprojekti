@@ -46,6 +46,7 @@ function NavBar({URL ,cart}) {
                     
                   </li>
                   <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
+                  <Link className='nav-link' to={'AdminPage'}>AdminPage demo</Link>
 
                 </ul>
             </div>
