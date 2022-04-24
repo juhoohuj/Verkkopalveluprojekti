@@ -20,6 +20,7 @@ import { prettyDOM } from '@testing-library/react';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
 import AdminPage from './pages/AdminPage';
+import Checkout from './pages/Checkout'
 
 const URL = 'http://localhost/store/';
 
@@ -82,6 +83,7 @@ function App() {
           <Route path="/products" element={<Products URL={URL}/>}/>
           <Route path="/search/:keywords" element={<Search URL={URL} addToCart={addToCart} />}/>
           <Route path='/AdminPage' element={<AdminPage />} />
+          <Route path='/Checkout' element={<Checkout/>}/>
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </Router>
