@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import ProductDetails from './ProductPage';
 
 import '../styles/Products.css';
+import NavBar from '../components/NavBar';
 
 export default function Products({URL ,addToCart}) {
 const [categoryName, setCategoryName] = useState('');
@@ -36,6 +37,7 @@ useEffect(() => {
       description={productInfo.description}
       image={productInfo.image}
       back={back}
+      
       />
     } else {
 

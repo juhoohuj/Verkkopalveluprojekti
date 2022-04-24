@@ -16,9 +16,7 @@ import Search from './pages/Search';
 import Order from './pages/Order';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import ProductPage from './pages/ProductPage';
 import { prettyDOM } from '@testing-library/react';
-import ProductDetails from './pages/ProductPage';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
 import AdminPage from './pages/AdminPage';
@@ -78,7 +76,6 @@ function App() {
           <Route path="/" element={<Home addToCart={addToCart}/>}/>
           <Route path="/AboutUs" element={<AboutUs />}/>
           <Route path="/products/:categoryId" element={<Products URL={URL} addToCart={addToCart}/>}/>
-          <Route path="/ProductPage" element={<ProductPage />}/>
           <Route path="/Register" element={<Register />}/>
           <Route path="/Login" element={<LogIn />}/>
           <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} emptyCart={emptyCart}/>} />
