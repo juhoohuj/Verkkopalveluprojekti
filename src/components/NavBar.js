@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import back from '../pages/Products';
 import { Link, Router, Route } from 'react-router-dom';
-
 import Cart from './Cart';
 
 const URL = 'http://localhost/store/';
@@ -22,7 +22,7 @@ function NavBar({URL ,cart}) {
           });
       }, [])
   return (
-        <div>
+        <div className='navbar1'>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
               <div className="navbar-collapse" id="navbarNavDropdown">
@@ -37,7 +37,8 @@ function NavBar({URL ,cart}) {
                       <li key={category.id}>
                       <Link 
                         className='dropdown-item'
-                          to={'/Products/' +category.id}>{category.name}
+                          to={'/Products/' +category.id}  onClick={back} >{category.name}
+                         
                         </Link>
                         
                         </li>
