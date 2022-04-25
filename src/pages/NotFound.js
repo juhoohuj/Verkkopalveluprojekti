@@ -10,7 +10,6 @@ export default function NotFound() {
 
   return (
     <div className='NotFound'>
-      
         <h1>Sivua ei löytynyt!</h1>
         <Link className="BackToHome" to={'/'} >Etusivu</Link>
         

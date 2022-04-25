@@ -75,15 +75,11 @@ hr{
 }
 
 .nappi > button{
-    background-color: rgb(75, 196, 75);
     color: white;
     border-radius: 10px;
     padding: 15px;
 }
 
-button:hover{
-    background-color: rgb(58, 153, 58);
-}
 
 #tuotetietoa{
     padding: 45px;

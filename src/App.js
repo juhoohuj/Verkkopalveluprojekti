@@ -83,7 +83,7 @@ function App() {
           <Route path="/products" element={<Products URL={URL}/>}/>
           <Route path="/search/:keywords" element={<Search URL={URL} addToCart={addToCart} />}/>
           <Route path='/AdminPage' element={<AdminPage />} />
-          <Route path='/Checkout' element={<Checkout/>}/>
+          <Route path='/Checkout' element={<Checkout URL={URL} emptyCart={emptyCart} cart={cart}/>}/>
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </Router>
