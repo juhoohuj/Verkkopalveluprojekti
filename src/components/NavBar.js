@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
+import back from '../pages/Products';
 import { Link, Router, Route } from 'react-router-dom';
-
 import Cart from './Cart';
 
 const URL = 'http://localhost/store/';
@@ -22,14 +22,12 @@ function NavBar({URL ,cart}) {
           });
       }, [])
   return (
-        <div>
+        <div className='navbar1'>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
               <div className="navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                   <Link className="nav-link" to={'/'} >Etusivu</Link>
-                  <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
-                  <Link className="nav-link" to={'ProductPage'} >Tuotesivu TESTI</Link>
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Kategoriat
@@ -39,12 +37,18 @@ function NavBar({URL ,cart}) {
                       <li key={category.id}>
                       <Link 
                         className='dropdown-item'
-                          to={'/Products/' +category.id}>{category.name}
+                          to={'/Products/' +category.id}  onClick={back} >{category.name}
+                         
                         </Link>
+                        
                         </li>
                       ))}
                     </ul>
+                    
                   </li>
+                  <Link className="nav-link" to={'AboutUs'} >Tietoa meistä</Link>
+                  <Link className='nav-link' to={'AdminPage'}>AdminPage demo</Link>
+
                 </ul>
             </div>
             </div>

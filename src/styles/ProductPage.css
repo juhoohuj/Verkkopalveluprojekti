@@ -6,7 +6,7 @@ body {
 
 .containerbox{
     display: grid;
-    grid-template-columns: 10rem 550px 15rem 550px 10rem;
+    grid-template-columns: 1px 550px 15rem 550px;
     grid-template-rows: 60px 10rem 10rem 10rem;
     gap: 10px;
     justify-content: center;
@@ -33,12 +33,15 @@ hr{
     grid-column: 2/4;
     display: block;
     text-align: center;
-    background-image: url("../images/3.jpg");
     background-size: 700px;
     background-repeat: no-repeat;
     background-position: center;
     height: 500px;
     border: 1px solid black;
+}
+.paakuva > img {
+    width: 700px;
+    height: 450px;
 }
 
 .hinta{

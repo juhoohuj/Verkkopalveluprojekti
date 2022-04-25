@@ -59,7 +59,7 @@ function Register() {
           <input value={address} onChange={e => setAddress(e.target.value)} placeholder='Osoite'/>
           <input value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder='Postinumero'/>
           <input value={city} onChange={e => setCity(e.target.value)} placeholder='Postitoimipaikka'/>
-          <button>Rekisteröidy</button>
+          <button className='RegisterButton'>Rekisteröidy</button>
         </form>
         <ul className='RegisterError'>
         {errors?.map(error => (

@@ -16,12 +16,11 @@ import Search from './pages/Search';
 import Order from './pages/Order';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import ProductPage from './pages/ProductPage';
 import { prettyDOM } from '@testing-library/react';
-import Grid from './pages/ProductPage';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
 import AdminPage from './pages/AdminPage';
+import Checkout from './pages/Checkout'
 
 const URL = 'http://localhost/store/';
 
@@ -36,7 +35,7 @@ function App() {
  
   }, [])
   
-  function addToCart(product){
+   function addToCart(product){
     if(cart.some(item => item.id === product.id)){
       const existingProduct = cart.filter(item => item.id === product.id);
       updateAmount(parseInt(existingProduct[0].amount) +1, product);
@@ -78,13 +77,13 @@ function App() {
           <Route path="/" element={<Home addToCart={addToCart}/>}/>
           <Route path="/AboutUs" element={<AboutUs />}/>
           <Route path="/products/:categoryId" element={<Products URL={URL} addToCart={addToCart}/>}/>
-          <Route path="/ProductPage" element={<ProductPage />}/>
           <Route path="/Register" element={<Register />}/>
           <Route path="/Login" element={<LogIn />}/>
           <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount} emptyCart={emptyCart}/>} />
           <Route path="/products" element={<Products URL={URL}/>}/>
           <Route path="/search/:keywords" element={<Search URL={URL} addToCart={addToCart} />}/>
           <Route path='/AdminPage' element={<AdminPage />} />
+          <Route path='/Checkout' element={<Checkout/>}/>
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </Router>
