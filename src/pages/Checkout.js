@@ -1,7 +1,32 @@
+import axios from 'axios';
 import React from 'react';
 
 
-export default function Checkout() {
+export default function Checkout({URL, cart, emptyCart}) {
+
+    function saveOrder() {
+      const json = JSON.stringify({
+        firstname: "Nikke",
+        lastname: "KAOKDA",
+        address: "asdas 1",
+        zip: "09203",
+        city: "Oulu",
+        cart: cart,
+      });
+      console.log(cart)
+      console.log(json)
+      axios.post(URL + 'order/save.php', json, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type' : 'application/json'
+        }
+      })
+      .then(() => {
+        // emptyCart();
+      }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error);
+      });
+    }
 
   return (
 <div className="maincontainer">
@@ -126,7 +151,7 @@ export default function Checkout() {
                     </div>
                   </div>
                 </div>
-                <button className="btn btn-primary btn-lg btn-block" type="button">Maksa ja tilaa</button>
+                <button className="btn btn-primary btn-lg btn-block" type="button" onClick={() => saveOrder()}>Maksa ja tilaa</button>
               </form>
             </div>
           </div>
