@@ -11,6 +11,8 @@ export default function Checkout({URL, cart, emptyCart}) {
   const [zip, setZip] = useState("");
 
     function saveOrder() {
+
+
       const json = JSON.stringify({
         firstname: firstname,
         lastname: lastname,

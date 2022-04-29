@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState, createRef, } from 'react';
 
 import '../styles/ProductPage.css';
+
+
 
 export default function ProductDetails({name, price, product, image, description, back, addToCart}) {
     return (
