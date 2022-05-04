@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
-import Header from '../components/Header';
 import '../styles/AboutUs.css';
 import maksutavat from "../images/verkkokaupan-maksutavat.png";
 

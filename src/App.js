@@ -16,12 +16,10 @@ import Search from './pages/Search';
 import Order from './pages/Order';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import { prettyDOM } from '@testing-library/react';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn'
 import AdminPage from './pages/AdminPage';
 import Checkout from './pages/Checkout'
-import ProductDetails from './pages/ProductPage';
 
 const URL = 'http://localhost/store/';
 
