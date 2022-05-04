@@ -14,3 +14,11 @@
 .Orderlist {
     padding: 5px;
 }
+
+.categoryForm form {
+    padding: 10px;
+}
+
+.categoryForm button {
+    margin-left: 10px;
+}
