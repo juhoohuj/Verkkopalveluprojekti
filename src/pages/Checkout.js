@@ -22,20 +22,32 @@ export default function Checkout({URL, cart, emptyCart}) {
         city: city,
         cart: cart,
       });
-      console.log(cart)
       console.log(json)
-      axios.post(URL + 'order/save.php', json, {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type' : 'application/json'
-        }
-      })
-      .then(() => {
-        emptyCart();
-      }).catch(error => {
-        alert(error.response === undefined ? error : error.response.data.error);
-      });
-    }
+      if('cart' in localStorage){
+        axios.post(URL + 'order/save.php', json, {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type' : 'application/json'
+          }
+        })
+        .then((response) => {
+          emptyCart();
+          setFirstname("")
+          setLastname("")
+          setEmail("")
+          setAddress("")
+          setZip("")
+          setCity("")
+          alert("Tilaus onnistui! Tilaus numerosi on #" + response.data.id)
+        }).catch(error => {
+          alert(error.response === undefined ? error : error.response.data.error);
+        });
+      }
+      else{
+        alert("Ostoskori ei voi olla tyhjä.")
+      }
+      }
+
 
   return (
 <div className="maincontainer">
@@ -77,14 +89,14 @@ export default function Checkout({URL, cart, emptyCart}) {
                 <div className="row">
                   <div className="col-md-6 mb-3">
                     <label htmlFor="firstName">Etunimi</label>
-                    <input onChange={e => setFirstname(e.target.value)} type="text" className="form-control" id="firstName" placeholder="" required />
+                    <input value={firstname} onChange={e => setFirstname(e.target.value)} type="text" className="form-control" id="firstName" placeholder="" required />
                     <div className="invalid-feedback">
                       Etunimi on pakollinen.
                     </div>
                   </div>
                   <div className="col-md-6 mb-3">
                     <label htmlFor="lastName">Sukunimi</label>
-                    <input onChange={e => setLastname(e.target.value)} type="text" className="form-control" id="lastName" required />
+                    <input value={lastname} onChange={e => setLastname(e.target.value)} type="text" className="form-control" id="lastName" required />
                     <div className="invalid-feedback">
                       Sukunimi on pakollinen.
                     </div>
@@ -92,14 +104,14 @@ export default function Checkout({URL, cart, emptyCart}) {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email">Sähköposti</label>
-                  <input onChange={e => setEmail(e.target.value)} type="email" className="form-control" id="email" />
+                  <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" id="email" />
                   <div className="invalid-feedback">
                     Sähköposti on pakollinen.
                   </div>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="address">Osoite</label>
-                  <input onChange={e => setAddress(e.target.value)} type="text" className="form-control" id="address" required />
+                  <input value={address} onChange={e => setAddress(e.target.value)} type="text" className="form-control" id="address" required />
                   <div className="invalid-feedback">
                     Syötä osoite.
                   </div>
@@ -107,14 +119,14 @@ export default function Checkout({URL, cart, emptyCart}) {
                 <div className="row">
                   <div className="col-md-4 mb-3">
                     <label  htmlFor="state">Postitoimipaikka</label>
-                    <input onChange={e => setCity(e.target.value)} type="text" className="form-control" id="state" required />
+                    <input value={city} onChange={e => setCity(e.target.value)} type="text" className="form-control" id="state" required />
                     <div className="invalid-feedback">
                       Postitoimipaikka on pakollinen.
                     </div>
                   </div>
                   <div className="col-md-3 mb-3">
                     <label htmlFor="zip">Postinumero</label>
-                    <input onChange={e => setZip(e.target.value)} type="text" className="form-control" id="zip" required />
+                    <input value={zip} onChange={e => setZip(e.target.value)} type="text" className="form-control" id="zip" required />
                     <div className="invalid-feedback">
                     Postinumero on pakollinen.
                     </div>
