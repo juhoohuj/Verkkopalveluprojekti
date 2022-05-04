@@ -3,9 +3,14 @@
 }
 
 .Order {
-    background-color:rgb(240, 240, 240) ;
+    background-color:rgba(212, 212, 212, 0.89) ;
+    margin: 7px;
+
 }
 
 .Orderlist p {
-    padding: 10px;
+    padding: 8px;
+}
+.Orderlist {
+    padding: 5px;
 }
