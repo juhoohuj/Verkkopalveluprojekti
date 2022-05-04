@@ -40,6 +40,8 @@ export default function Home({addToCart}) {
 
   return (
   <div className='container'>
+        <h1 className='EtusivuH1'>Laaja valikoima elektroniikkatuotteita!</h1>
+
     <Carousel />
     
     <div className='ProductGrid'>

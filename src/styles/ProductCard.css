@@ -19,3 +19,9 @@ display: -webkit-box;
 -webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
 }
+
+.EtusivuH1 {
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+}

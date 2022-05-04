@@ -21,6 +21,7 @@ import Register from './pages/Register';
 import LogIn from './pages/LogIn'
 import AdminPage from './pages/AdminPage';
 import Checkout from './pages/Checkout'
+import ProductDetails from './pages/ProductPage';
 
 const URL = 'http://localhost/store/';
 
